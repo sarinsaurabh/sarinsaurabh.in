@@ -1,21 +1,110 @@
 ---
 /**
- * Homepage - Typography Foundation Demo
- * This page uses the BaseLayout component for consistent site structure.
- * Full homepage content will be implemented in Task Group 3.
+ * Homepage - A filter for thoughtful visitors
+ * Displays philosophy statement, content description, and entry point link.
+ * Uses BaseLayout for consistent site structure.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <h1>Typography Foundation</h1>
-  <p>
-    This is a demonstration of the typography foundation. The text should render in
-    Source Serif 4 at 18px with a line-height of 1.65. The color should be #111 on
-    a white background.
-  </p>
-  <p>
-    The content column has a maximum width of 680px, is centered with auto margins,
-    and has horizontal padding of 1.5rem (24px) for comfortable mobile reading.
-  </p>
+  <article class="homepage">
+    <section class="opening-statement">
+      <p class="statement-lead">Problem-first thinking.</p>
+      <p class="statement-body">
+        In a world full of solutions, the real problem often remains unsolved.
+        This is a public workspace for thinking through complex, ambiguous problems.
+      </p>
+    </section>
+
+    <section class="what-youll-find">
+      <h2>What you'll find here</h2>
+      <ul>
+        <li>Problems explored before solutions are proposed</li>
+        <li>Unfinished thinking and evolving ideas</li>
+        <li>Real constraints, trade-offs, and judgment calls</li>
+        <li>Writing meant to be read slowly, not skimmed</li>
+      </ul>
+    </section>
+
+    <section class="entry-point">
+      <p>
+        <a href="/problem-notes/placeholder" class="entry-link">Start with a problem I'm thinking about</a>
+      </p>
+    </section>
+  </article>
 </BaseLayout>
+
+<style>
+  /* Homepage-specific styling
+   * Typography as primary design element
+   * Generous whitespace for calm, reading-first experience
+   */
+
+  .homepage {
+    /* Establish vertical rhythm with generous spacing */
+  }
+
+  /* Opening Statement Section */
+  .opening-statement {
+    margin-bottom: 3rem;
+  }
+
+  .statement-lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .statement-body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  /* What You'll Find Here Section */
+  .what-youll-find {
+    margin-bottom: 3rem;
+  }
+
+  .what-youll-find h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .what-youll-find ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .what-youll-find li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .what-youll-find li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Entry Point Link Section */
+  .entry-point {
+    margin-top: 2rem;
+  }
+
+  .entry-link {
+    /* Understated inline link style - inherits global link styling */
+    /* No prominent CTA button styling */
+    font-size: 1rem;
+    color: #111;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .entry-link:hover {
+    text-decoration-thickness: 2px;
+  }
+</style>

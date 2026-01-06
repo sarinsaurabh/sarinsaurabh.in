@@ -87,18 +87,18 @@ This is a greenfield Astro project establishing foundational patterns for typogr
 #### Task Group 3: Homepage Content Implementation
 **Dependencies:** Task Group 2
 
-- [ ] 3.0 Complete homepage content and styling
-  - [ ] 3.1 Write 3-4 focused tests for homepage content
+- [x] 3.0 Complete homepage content and styling
+  - [x] 3.1 Write 3-4 focused tests for homepage content
     - Test that opening statement section renders with correct copy
     - Test that "What you'll find here" section renders as semantic ul/li list with 4 bullet points
     - Test that entry point link renders with correct text and links to placeholder URL
     - Test that homepage uses BaseLayout wrapper
-  - [ ] 3.2 Create homepage opening statement section
+  - [x] 3.2 Create homepage opening statement section
     - Display 2-3 sentence philosophy statement at top of page
     - Copy: "Problem-first thinking. In a world full of solutions, the real problem often remains unsolved. This is a public workspace for thinking through complex, ambiguous problems."
     - Style with calm, confident tone - no promotional language
     - No hero image, illustration, or decorative elements
-  - [ ] 3.3 Implement "What You'll Find Here" section
+  - [x] 3.3 Implement "What You'll Find Here" section
     - Display 4 bullet points describing content philosophy
     - Bullets:
       - Problems explored before solutions are proposed
@@ -107,18 +107,18 @@ This is a greenfield Astro project establishing foundational patterns for typogr
       - Writing meant to be read slowly, not skimmed
     - Use semantic list markup (ul/li) for accessibility
     - Position below opening statement with appropriate vertical spacing
-  - [ ] 3.4 Add entry point link
+  - [x] 3.4 Add entry point link
     - Link text: "Start with a problem I'm thinking about"
     - Link to placeholder URL (e.g., /problem-notes/placeholder) until Problem Notes spec is implemented
     - Style as understated inline link, not prominent CTA button
     - Position after "What you'll find here" section
     - Ensure link can be easily swapped without layout changes
-  - [ ] 3.5 Apply homepage-specific styling
+  - [x] 3.5 Apply homepage-specific styling
     - Generous whitespace creating calm, reading-first experience
     - No cards, blocks, or complex UI patterns
     - Typography as the primary design element
     - Consistent with established vertical rhythm
-  - [ ] 3.6 Ensure homepage tests pass
+  - [x] 3.6 Ensure homepage tests pass
     - Run ONLY the 3-4 tests written in 3.1
     - Verify all content sections render correctly
     - Do NOT run entire test suite at this stage
