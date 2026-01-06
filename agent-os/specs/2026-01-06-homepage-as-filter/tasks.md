@@ -12,28 +12,28 @@ This is a greenfield Astro project establishing foundational patterns for typogr
 #### Task Group 1: Astro Project Setup & Typography Foundation
 **Dependencies:** None
 
-- [ ] 1.0 Complete project foundation and typography setup
-  - [ ] 1.1 Write 3-4 focused tests for typography and layout foundation
+- [x] 1.0 Complete project foundation and typography setup
+  - [x] 1.1 Write 3-4 focused tests for typography and layout foundation
     - Test that Google Fonts (Source Serif 4) loads correctly
     - Test that body text renders with correct font-size (18px) and line-height (1.65)
     - Test that content column respects max-width constraint (680px)
     - Test that text color is #111 on white background
-  - [ ] 1.2 Initialize Astro project structure
+  - [x] 1.2 Initialize Astro project structure
     - Create standard Astro directory structure (src/pages, src/layouts, src/components, src/styles)
     - Configure astro.config.mjs for static site generation
     - Set up package.json with necessary scripts (dev, build, preview)
-  - [ ] 1.3 Create global typography styles
+  - [x] 1.3 Create global typography styles
     - Load Source Serif 4 via Google Fonts in the document head
     - Set Georgia as fallback serif font
     - Configure body font-size: 18px, line-height: 1.65, color: #111
     - Establish heading hierarchy (h1, h2) with conservative weight variations
     - Create src/styles/global.css with typography foundation
-  - [ ] 1.4 Establish content layout patterns
+  - [x] 1.4 Establish content layout patterns
     - Single centered content column with max-width: 680px
     - Horizontal padding: 1.5rem (24px) for mobile edge spacing
     - Vertical padding: 4rem (64px) top and bottom
     - Configure margin: 0 auto for centering
-  - [ ] 1.5 Ensure foundation tests pass
+  - [x] 1.5 Ensure foundation tests pass
     - Run ONLY the 3-4 tests written in 1.1
     - Verify typography renders correctly in browser
     - Do NOT run entire test suite at this stage

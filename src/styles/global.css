@@ -1,0 +1,107 @@
+/* Typography Foundation
+ * Primary font: Source Serif 4 (loaded via Google Fonts)
+ * Fallback: Georgia, serif
+ * Establishes reading-first experience with generous whitespace
+ */
+
+/* CSS Reset - minimal, focused on typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #111;
+  background-color: #fff;
+}
+
+/* Heading Hierarchy - Conservative weight variations */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph and text elements */
+p {
+  margin-bottom: 1.5rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* List styling */
+ul,
+ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Link styling - understated, inline */
+a {
+  color: #111;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* Content Layout Patterns */
+.content-column {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* Main content area */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
