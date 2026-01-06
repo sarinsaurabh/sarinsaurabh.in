@@ -1,0 +1,145 @@
+---
+/**
+ * BaseLayout - Site-wide layout wrapper
+ * Provides consistent page structure with header navigation, main content area, and footer.
+ * Uses semantic HTML elements throughout for accessibility.
+ */
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Saurabh Sarin',
+  description = 'Problem-first thinking. A public workspace for thinking through complex, ambiguous problems.'
+} = Astro.props;
+
+// Get current path for active navigation state
+const currentPath = Astro.url.pathname;
+
+// Navigation items configuration
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/problem-notes', label: 'Problem Notes' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/now', label: 'Now' },
+  { href: '/about', label: 'About' },
+];
+
+/**
+ * Determines if a navigation item is active based on current path
+ */
+function isActive(href: string): boolean {
+  if (href === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Google Fonts: Source Serif 4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          {navItems.map((item) => (
+            <li class="nav-item">
+              <a
+                href={item.href}
+                class:list={['nav-link', { 'nav-link--active': isActive(item.href) }]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- Minimal footer placeholder - details deferred to future specs -->
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  /* Header and Navigation Styles */
+  .site-header {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 0;
+  }
+
+  .site-nav {
+    margin-bottom: 2rem;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .nav-link {
+    color: #111;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .nav-link--active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+
+  .nav-link:focus {
+    outline: 2px solid #111;
+    outline-offset: 2px;
+  }
+
+  /* Footer Styles */
+  .site-footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .footer-content {
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+  }
+</style>

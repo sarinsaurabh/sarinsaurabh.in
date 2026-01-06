@@ -49,29 +49,29 @@ This is a greenfield Astro project establishing foundational patterns for typogr
 #### Task Group 2: BaseLayout Component & Navigation
 **Dependencies:** Task Group 1
 
-- [ ] 2.0 Complete BaseLayout component with navigation
-  - [ ] 2.1 Write 3-4 focused tests for BaseLayout and navigation
+- [x] 2.0 Complete BaseLayout component with navigation
+  - [x] 2.1 Write 3-4 focused tests for BaseLayout and navigation
     - Test that BaseLayout renders semantic HTML structure (header, nav, main, footer)
     - Test that navigation contains all required links (Home, Problem Notes, Case Studies, Now, About)
     - Test that navigation links are simple text without icons or dropdowns
     - Test that main content slot renders child content correctly
-  - [ ] 2.2 Create BaseLayout component
+  - [x] 2.2 Create BaseLayout component
     - Create src/layouts/BaseLayout.astro
     - Use semantic HTML: header, nav, main, footer elements
     - Include document head with meta tags and font loading
     - Establish consistent page structure and spacing patterns
     - Wrap all page content in centered container with established max-width
-  - [ ] 2.3 Implement site navigation in header
+  - [x] 2.3 Implement site navigation in header
     - Create horizontal header navigation
     - Navigation items: Home, Problem Notes, Case Studies, Now, About
     - Style as simple text links without icons, dropdowns, or complex interactions
     - Use placeholder routes for pages not yet implemented (/problem-notes, /case-studies, /now, /about)
     - Highlight current page in navigation (active state)
-  - [ ] 2.4 Add minimal footer placeholder
+  - [x] 2.4 Add minimal footer placeholder
     - Create basic footer element within BaseLayout
     - Keep minimal per spec (details deferred to future specs)
     - Maintain semantic HTML structure
-  - [ ] 2.5 Ensure BaseLayout tests pass
+  - [x] 2.5 Ensure BaseLayout tests pass
     - Run ONLY the 3-4 tests written in 2.1
     - Verify navigation renders correctly
     - Do NOT run entire test suite at this stage

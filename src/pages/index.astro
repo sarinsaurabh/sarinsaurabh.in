@@ -1,37 +1,21 @@
 ---
 /**
  * Homepage - Typography Foundation Demo
- * This is a minimal page to validate the typography and layout foundation.
- * Will be replaced with full homepage content in Task Group 3.
+ * This page uses the BaseLayout component for consistent site structure.
+ * Full homepage content will be implemented in Task Group 3.
  */
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Problem-first thinking. A public workspace for thinking through complex, ambiguous problems." />
-    <title>Saurabh Sarin</title>
-
-    <!-- Google Fonts: Source Serif 4 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <main>
-      <h1>Typography Foundation</h1>
-      <p>
-        This is a demonstration of the typography foundation. The text should render in
-        Source Serif 4 at 18px with a line-height of 1.65. The color should be #111 on
-        a white background.
-      </p>
-      <p>
-        The content column has a maximum width of 680px, is centered with auto margins,
-        and has horizontal padding of 1.5rem (24px) for comfortable mobile reading.
-      </p>
-    </main>
-  </body>
-</html>
+<BaseLayout>
+  <h1>Typography Foundation</h1>
+  <p>
+    This is a demonstration of the typography foundation. The text should render in
+    Source Serif 4 at 18px with a line-height of 1.65. The color should be #111 on
+    a white background.
+  </p>
+  <p>
+    The content column has a maximum width of 680px, is centered with auto margins,
+    and has horizontal padding of 1.5rem (24px) for comfortable mobile reading.
+  </p>
+</BaseLayout>

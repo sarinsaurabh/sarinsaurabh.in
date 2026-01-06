@@ -15,16 +15,16 @@ describe('Typography Foundation', () => {
     globalCss = fs.readFileSync(cssPath, 'utf-8');
   });
 
-  it('should load Source Serif 4 font via Google Fonts link in index page', () => {
-    const indexPath = path.join(process.cwd(), 'src/pages/index.astro');
-    const indexContent = fs.readFileSync(indexPath, 'utf-8');
+  it('should load Source Serif 4 font via Google Fonts link in BaseLayout', () => {
+    const layoutPath = path.join(process.cwd(), 'src/layouts/BaseLayout.astro');
+    const layoutContent = fs.readFileSync(layoutPath, 'utf-8');
 
     // Check for Google Fonts preconnect
-    expect(indexContent).toContain('fonts.googleapis.com');
-    expect(indexContent).toContain('fonts.gstatic.com');
+    expect(layoutContent).toContain('fonts.googleapis.com');
+    expect(layoutContent).toContain('fonts.gstatic.com');
 
     // Check for Source Serif 4 font loading
-    expect(indexContent).toContain('Source+Serif+4');
+    expect(layoutContent).toContain('Source+Serif+4');
   });
 
   it('should configure body text with font-size 18px and line-height 1.65', () => {
