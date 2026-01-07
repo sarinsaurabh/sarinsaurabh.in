@@ -84,34 +84,34 @@ This spec establishes the foundational content structure for Problem Notes and C
 #### Task Group 3: Directory Structure and Placeholder Content
 **Dependencies:** Task Group 2
 
-- [ ] 3.0 Complete content directory structure and placeholders
-  - [ ] 3.1 Write 2-4 focused tests for content structure
+- [x] 3.0 Complete content directory structure and placeholders
+  - [x] 3.1 Write 2-4 focused tests for content structure
     - Test that placeholder Problem Note file is recognized by collection
     - Test that placeholder Case Study file is recognized by collection
     - Test that frontmatter is parsed correctly from placeholder files
     - Skip testing content body rendering (covered by MDX tests)
-  - [ ] 3.2 Create src/content/problem-notes/ directory
+  - [x] 3.2 Create src/content/problem-notes/ directory
     - Flat file structure, no nested folders per piece
     - Files use .mdx extension
-  - [ ] 3.3 Create src/content/case-studies/ directory
+  - [x] 3.3 Create src/content/case-studies/ directory
     - Flat file structure, no nested folders per piece
     - Files use .mdx extension
-  - [ ] 3.4 Create placeholder Problem Note MDX file
+  - [x] 3.4 Create placeholder Problem Note MDX file
     - Filename: example-problem-note.mdx (becomes slug)
     - Include all required frontmatter fields with valid values
     - Set draft: true so it does not appear publicly
     - Include minimal body content to verify rendering works
-  - [ ] 3.5 Create placeholder Case Study MDX file
+  - [x] 3.5 Create placeholder Case Study MDX file
     - Filename: example-case-study.mdx (becomes slug)
     - Include all required frontmatter fields with valid values
     - Set draft: true so it does not appear publicly
     - Include minimal body content to verify rendering works
-  - [ ] 3.6 Create draft filtering helper function
+  - [x] 3.6 Create draft filtering helper function
     - Create src/lib/content.ts for content utility functions
     - Implement filterDrafts() function that uses import.meta.env.PROD
     - Drafts excluded in production, visible in development
     - Function accepts collection entries array, returns filtered array
-  - [ ] 3.7 Ensure content structure tests pass
+  - [x] 3.7 Ensure content structure tests pass
     - Run ONLY the tests written in 3.1
     - Verify placeholder files are recognized by collections
     - Verify Astro build succeeds with placeholder content
