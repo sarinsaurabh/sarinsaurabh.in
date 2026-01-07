@@ -128,26 +128,26 @@ This feature creates the Problem Notes section with a list page at `/problem-not
 #### Task Group 3: Integration Testing & Gap Analysis
 **Dependencies:** Task Groups 1-2
 
-- [ ] 3.0 Review and verify complete feature implementation
-  - [ ] 3.1 Review tests from Task Groups 1-2
+- [x] 3.0 Review and verify complete feature implementation
+  - [x] 3.1 Review tests from Task Groups 1-2
     - Review the 3-4 tests written for list page (Task 1.1)
     - Review the 3-4 tests written for note pages (Task 2.1)
     - Total existing tests: approximately 6-8 tests
-  - [ ] 3.2 Analyze test coverage gaps for this feature only
+  - [x] 3.2 Analyze test coverage gaps for this feature only
     - Verify draft filtering works correctly in both environments
     - Verify status indicator typography across all three states
     - Verify responsive behavior at mobile breakpoints
     - Focus ONLY on gaps related to Problem Notes feature
-  - [ ] 3.3 Write up to 4 additional integration tests if needed
+  - [x] 3.3 Write up to 4 additional integration tests if needed
     - Test navigation flow: list page -> note page -> back to list
     - Test status indicator styling for each status type (exploring, evolving, stable)
     - Test empty state handling (no notes scenario)
     - Maximum 4 new tests to fill critical gaps
-  - [ ] 3.4 Create sample content for manual verification
+  - [x] 3.4 Create sample content for manual verification
     - Add 2-3 non-draft problem notes with varying statuses
     - Include notes with and without tags
     - Verify visual appearance matches design intent
-  - [ ] 3.5 Run feature-specific tests only
+  - [x] 3.5 Run feature-specific tests only
     - Run ONLY tests related to Problem Notes feature (tests from 1.1, 2.1, and 3.3)
     - Expected total: approximately 10-12 tests maximum
     - Do NOT run the entire application test suite
