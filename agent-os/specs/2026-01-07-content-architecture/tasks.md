@@ -131,24 +131,24 @@ This spec establishes the foundational content structure for Problem Notes and C
 #### Task Group 4: Test Review and Integration Verification
 **Dependencies:** Task Groups 1-3
 
-- [ ] 4.0 Review tests and verify end-to-end integration
-  - [ ] 4.1 Review tests from Task Groups 1-3
+- [x] 4.0 Review tests and verify end-to-end integration
+  - [x] 4.1 Review tests from Task Groups 1-3
     - Review the 2-4 MDX integration tests (Task 1.1)
     - Review the 3-6 content collection tests (Task 2.1)
     - Review the 2-4 content structure tests (Task 3.1)
     - Total existing tests: approximately 7-14 tests
-  - [ ] 4.2 Analyze test coverage gaps for content architecture
+  - [x] 4.2 Analyze test coverage gaps for content architecture
     - Identify if any critical schema validation is untested
     - Check if draft filtering logic has adequate coverage
     - Focus ONLY on gaps related to this spec's requirements
     - Prioritize build-time validation over runtime behavior
-  - [ ] 4.3 Write up to 5 additional strategic tests if needed
+  - [x] 4.3 Write up to 5 additional strategic tests if needed
     - Add maximum of 5 new tests to fill identified critical gaps
     - Focus on integration between collections and build process
     - Test that invalid frontmatter causes build-time errors
     - Test that draft filtering works correctly per environment
     - Skip edge cases and error handling unless critical
-  - [ ] 4.4 Run feature-specific tests and build verification
+  - [x] 4.4 Run feature-specific tests and build verification
     - Run ONLY tests related to content architecture
     - Execute `npm run build` to verify static output generation
     - Verify no TypeScript errors in content.config.ts
