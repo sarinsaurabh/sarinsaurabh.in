@@ -65,50 +65,50 @@ This feature creates the Problem Notes section with a list page at `/problem-not
 #### Task Group 2: Individual Note Pages
 **Dependencies:** Task Group 1
 
-- [ ] 2.0 Complete individual Problem Note pages
-  - [ ] 2.1 Write 3-4 focused tests for note pages
+- [x] 2.0 Complete individual Problem Note pages
+  - [x] 2.1 Write 3-4 focused tests for note pages
     - Test that note page renders title, status indicator, and date at top
     - Test that MDX content renders with global typography styles
     - Test that tags display at end of page when present
     - Test that "Back to Problem Notes" link is present and functional
-  - [ ] 2.2 Create `/src/pages/problem-notes/[slug].astro`
+  - [x] 2.2 Create `/src/pages/problem-notes/[slug].astro`
     - Use Astro dynamic routes with getStaticPaths
     - Import BaseLayout from `../../layouts/BaseLayout.astro`
     - Use `getCollection('problem-notes')` from `astro:content`
     - Apply filterDrafts before generating paths
     - Return slug as param for each entry
-  - [ ] 2.3 Implement getStaticPaths function
+  - [x] 2.3 Implement getStaticPaths function
     - Fetch all problem-notes entries
     - Filter drafts using filterDrafts helper
     - Map entries to { params: { slug }, props: { entry } }
     - Enable static generation for all non-draft notes
-  - [ ] 2.4 Build note header section
+  - [x] 2.4 Build note header section
     - Display title using h1 styling from global.css
     - Show status indicator with typography-based styling (same as list page)
     - Display date in secondary styling
     - Status and date on same line, visually secondary to title
-  - [ ] 2.5 Render MDX content
+  - [x] 2.5 Render MDX content
     - Use `entry.render()` to get Content component
     - Render Content component in main content area
     - MDX inherits global typography styles from global.css
     - Content feels self-contained, not part of a feed
-  - [ ] 2.6 Implement tags display
+  - [x] 2.6 Implement tags display
     - Only render if entry.data.tags exists and has items
     - Position at very end of page, after MDX content
     - Style: smaller font size, muted color (#666 or similar)
     - Format as comma-separated inline list
     - Tags are informational only - no links, no filtering
-  - [ ] 2.7 Add back navigation
+  - [x] 2.7 Add back navigation
     - Simple "Back to Problem Notes" text link
     - Position at bottom of page after tags (if present)
     - Use understated link styling from global.css
     - No previous/next navigation, no breadcrumbs
-  - [ ] 2.8 Apply note page styles
+  - [x] 2.8 Apply note page styles
     - Follow global.css patterns (max-width: 680px via main element)
     - Consistent spacing with homepage visual patterns
     - Tags section: font-size: 0.85rem, color: #666
     - Generous whitespace (margin-bottom: 2rem between sections)
-  - [ ] 2.9 Ensure note page tests pass
+  - [x] 2.9 Ensure note page tests pass
     - Run ONLY the 3-4 tests written in 2.1
     - Verify individual note pages render correctly
     - Do NOT run the entire test suite at this stage

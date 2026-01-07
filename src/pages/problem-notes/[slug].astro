@@ -1,0 +1,175 @@
+---
+/**
+ * Individual Problem Note Page
+ * Displays a single problem note with title, status, date, MDX content, and tags.
+ * Uses Astro dynamic routes with getStaticPaths for static generation.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { filterDrafts } from '../../lib/content';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  // Fetch all problem notes
+  const allNotes = await getCollection('problem-notes');
+
+  // Filter drafts based on environment (excluded in production, visible in dev)
+  const filteredNotes = filterDrafts(allNotes);
+
+  // Map entries to static paths with entry as prop
+  return filteredNotes.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+// Render MDX content
+const { Content } = await entry.render();
+
+/**
+ * Formats a date for display
+ */
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+/**
+ * Returns the CSS class for status styling based on status type
+ */
+function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
+  return `status-${status}`;
+}
+---
+
+<BaseLayout
+  title={`${entry.data.title} - Problem Notes - Saurabh Sarin`}
+  description={entry.data.description}
+>
+  <article class="problem-note">
+    <header class="note-header">
+      <h1>{entry.data.title}</h1>
+      <div class="note-meta">
+        <span class={`note-status ${getStatusClass(entry.data.status)}`}>
+          {entry.data.status}
+        </span>
+        <span class="note-date">{formatDate(entry.data.date)}</span>
+      </div>
+    </header>
+
+    <div class="note-content">
+      <Content />
+    </div>
+
+    {entry.data.tags && entry.data.tags.length > 0 && (
+      <div class="note-tags">
+        <span class="tags-label">Tags:</span>
+        <span class="tags-list">{entry.data.tags.join(', ')}</span>
+      </div>
+    )}
+
+    <nav class="back-navigation">
+      <a href="/problem-notes">Back to Problem Notes</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Problem Note Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   * Typography as primary design element
+   */
+
+  .problem-note {
+    /* Page container inherits main styling from global.css */
+  }
+
+  /* Note Header */
+  .note-header {
+    margin-bottom: 2rem;
+  }
+
+  .note-header h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
+    margin-bottom: 1rem;
+  }
+
+  /* Note Meta - Status and Date on same line */
+  .note-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Typography-based Status Indicators */
+  .note-status {
+    /* Base status styling - lowercase, informational */
+    text-transform: lowercase;
+  }
+
+  /* Exploring: font-weight 400, italic */
+  .status-exploring {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Evolving: font-weight 400, normal */
+  .status-evolving {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Stable: font-weight 600, normal */
+  .status-stable {
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .note-date {
+    font-weight: 400;
+  }
+
+  /* Note Content - MDX inherits global typography */
+  .note-content {
+    margin-bottom: 2rem;
+  }
+
+  /* Tags Section - Visually understated at end of page */
+  .note-tags {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .tags-label {
+    font-weight: 400;
+    margin-right: 0.25rem;
+  }
+
+  .tags-list {
+    font-weight: 400;
+  }
+
+  /* Back Navigation */
+  .back-navigation {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .back-navigation a {
+    /* Inherits understated link styling from global.css */
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .back-navigation a:hover {
+    color: #111;
+  }
+</style>
