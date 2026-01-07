@@ -1,0 +1,38 @@
+---
+/**
+ * Now Page - Placeholder Page
+ * Temporary page until Now page spec is implemented.
+ * Uses BaseLayout for consistent site structure.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Now - Saurabh Sarin" description="What I'm focused on right now.">
+  <article class="placeholder-page">
+    <h1>Now</h1>
+    <p class="coming-soon">Coming soon.</p>
+    <p class="placeholder-description">
+      This page will share what I'm currently focused on and thinking about.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .placeholder-page {
+    /* Minimal styling for placeholder content */
+  }
+
+  .placeholder-page h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .coming-soon {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .placeholder-description {
+    color: #333;
+  }
+</style>

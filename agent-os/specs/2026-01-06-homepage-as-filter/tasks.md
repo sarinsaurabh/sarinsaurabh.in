@@ -134,28 +134,28 @@ This is a greenfield Astro project establishing foundational patterns for typogr
 #### Task Group 4: Responsive Design & Accessibility Verification
 **Dependencies:** Task Group 3
 
-- [ ] 4.0 Complete responsive design and accessibility
-  - [ ] 4.1 Write 2-3 focused tests for responsive and accessibility
+- [x] 4.0 Complete responsive design and accessibility
+  - [x] 4.1 Write 2-3 focused tests for responsive and accessibility
     - Test that content remains readable on mobile viewport (320px width)
     - Test that navigation remains usable on tablet and mobile
     - Test that proper heading hierarchy is maintained (h1 before h2)
-  - [ ] 4.2 Verify mobile-first responsive behavior
+  - [x] 4.2 Verify mobile-first responsive behavior
     - Content column naturally responsive due to max-width constraint
     - Maintain readable line length (680px max) on desktop
     - Ensure comfortable reading on mobile with 1.5rem horizontal padding
     - Test at breakpoints: 320px (mobile), 768px (tablet), 1024px+ (desktop)
-  - [ ] 4.3 Ensure accessibility compliance
+  - [x] 4.3 Ensure accessibility compliance
     - Verify semantic HTML structure passes accessibility audit
     - Confirm proper heading hierarchy (single h1, logical h2s)
     - Test keyboard navigation through all links
     - Verify color contrast ratio meets 4.5:1 for #111 on white
     - Ensure all links have meaningful, descriptive text
-  - [ ] 4.4 Create placeholder pages for navigation targets
+  - [x] 4.4 Create placeholder pages for navigation targets
     - Create minimal placeholder pages for: /problem-notes, /case-studies, /now, /about
     - Each placeholder uses BaseLayout component
     - Include simple "Coming soon" or similar placeholder text
     - Ensures navigation links don't 404
-  - [ ] 4.5 Run all feature tests and verify completion
+  - [x] 4.5 Run all feature tests and verify completion
     - Run all tests from Task Groups 1-4 (approximately 12-15 tests total)
     - Verify homepage renders correctly across viewports
     - Confirm all navigation links function
@@ -193,6 +193,7 @@ src/
     index.astro
     problem-notes/
       index.astro (placeholder)
+      placeholder.astro (placeholder for entry point link)
     case-studies.astro (placeholder)
     now.astro (placeholder)
     about.astro (placeholder)
