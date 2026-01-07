@@ -1,39 +1,202 @@
 ---
 /**
- * Problem Notes Index - Placeholder Page
- * Temporary page until Problem Notes spec is implemented.
- * Uses BaseLayout for consistent site structure.
+ * Problem Notes List Page
+ * Displays all non-draft Problem Notes in reverse chronological order.
+ * Uses typography-based status indicators and follows the site's calm, text-first aesthetic.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { filterDrafts } from '../../lib/content';
+import { getCollection } from 'astro:content';
+
+// Fetch all problem notes
+const allNotes = await getCollection('problem-notes');
+
+// Filter drafts based on environment (excluded in production, visible in dev)
+const filteredNotes = filterDrafts(allNotes);
+
+// Sort by date descending (newest first)
+const sortedNotes = filteredNotes.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+/**
+ * Formats a date for display
+ */
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+/**
+ * Returns the CSS class for status styling based on status type
+ */
+function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
+  return `status-${status}`;
+}
 ---
 
-<BaseLayout title="Problem Notes - Saurabh Sarin" description="Problems explored before solutions are proposed.">
-  <article class="placeholder-page">
-    <h1>Problem Notes</h1>
-    <p class="coming-soon">Coming soon.</p>
-    <p class="placeholder-description">
-      This section will contain problems I'm actively thinking through -
-      explored before solutions are proposed.
-    </p>
+<BaseLayout
+  title="Problem Notes - Saurabh Sarin"
+  description="Short explorations of problems - why they matter, why common solutions fail, and how they might be reframed."
+>
+  <article class="problem-notes-page">
+    <section class="intro">
+      <h1>Problem Notes</h1>
+      <p class="subtitle">
+        Short explorations of problems — why they matter, why common solutions fail, and how they might be reframed.
+      </p>
+      <p class="additional-line">Unfinished thinking is welcome.</p>
+    </section>
+
+    <section class="notes-list">
+      {sortedNotes.length > 0 ? (
+        <ul class="notes">
+          {sortedNotes.map((note) => (
+            <li class="note-item">
+              <a href={`/problem-notes/${note.slug}`} class="note-title">
+                {note.data.title}
+              </a>
+              <p class="note-description">{note.data.description}</p>
+              <div class="note-meta">
+                <span class={`note-status ${getStatusClass(note.data.status)}`}>
+                  {note.data.status}
+                </span>
+                <span class="note-date">{formatDate(note.data.date)}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="no-notes">No problem notes yet.</p>
+      )}
+    </section>
   </article>
 </BaseLayout>
 
 <style>
-  .placeholder-page {
-    /* Minimal styling for placeholder content */
+  /* Problem Notes List Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   * Typography as primary design element
+   */
+
+  .problem-notes-page {
+    /* Page container inherits main styling from global.css */
   }
 
-  .placeholder-page h1 {
-    margin-bottom: 1.5rem;
+  /* Intro Section */
+  .intro {
+    margin-bottom: 3rem;
   }
 
-  .coming-soon {
-    font-style: italic;
-    color: #666;
+  .intro h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
     margin-bottom: 1rem;
   }
 
-  .placeholder-description {
+  .subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
     color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .additional-line {
+    font-size: 1rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 0;
+  }
+
+  /* Notes List */
+  .notes-list {
+    margin-bottom: 2rem;
+  }
+
+  .notes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .note-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .note-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Note Title - Primary emphasis */
+  .note-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .note-title:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Note Description - Secondary emphasis */
+  .note-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Note Meta - Status and Date */
+  .note-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Typography-based Status Indicators */
+  .note-status {
+    /* Base status styling - lowercase, informational */
+    text-transform: lowercase;
+  }
+
+  /* Exploring: font-weight 400, italic */
+  .status-exploring {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Evolving: font-weight 400, normal */
+  .status-evolving {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Stable: font-weight 600, normal */
+  .status-stable {
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .note-date {
+    font-weight: 400;
+  }
+
+  /* Empty State */
+  .no-notes {
+    color: #666;
+    font-style: italic;
   }
 </style>
