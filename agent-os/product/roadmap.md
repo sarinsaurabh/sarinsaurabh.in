@@ -2,7 +2,7 @@
 
 1. [x] Homepage as Filter — Create the landing page that clearly articulates the problem-first lens, setting expectations that this is a thinking space rather than a portfolio or pitch. Include a concise statement of purpose and navigation to core content areas. `S`
 
-2. [ ] Content Architecture — Define and implement the content structure for Problem Notes and Case Studies, including frontmatter schema, URL patterns, and file organization for Markdown/MDX content. `S`
+2. [x] Content Architecture — Define and implement the content structure for Problem Notes and Case Studies, including frontmatter schema, URL patterns, and file organization for Markdown/MDX content. `S`
 
 3. [ ] Problem Notes Stream — Build the thinking stream section displaying short, structured pieces on problems. Include list view with titles and brief descriptions, individual note pages, and clear visual treatment for "unfinished" or "evolving" status. `M`
 
