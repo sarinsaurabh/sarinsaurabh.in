@@ -39,6 +39,7 @@ Define and implement the foundational content structure for Problem Notes and Ca
 - Create `src/content/case-studies/` directory for Case Studies MDX files
 - Flat file structure (no nested folders per piece)
 - Filename becomes the URL slug (e.g., `reframing-complexity.mdx` becomes `/problem-notes/reframing-complexity`)
+- Filenames should be kebab-case and semantically meaningful.
 
 **MDX Integration**
 - Install and configure `@astrojs/mdx` package

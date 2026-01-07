@@ -40,33 +40,33 @@ This spec establishes the foundational content structure for Problem Notes and C
 #### Task Group 2: Content Collections Configuration
 **Dependencies:** Task Group 1
 
-- [ ] 2.0 Complete content collections setup
-  - [ ] 2.1 Write 3-6 focused tests for content collection schemas
+- [x] 2.0 Complete content collections setup
+  - [x] 2.1 Write 3-6 focused tests for content collection schemas
     - Test Problem Notes schema validates required fields correctly
     - Test Case Studies schema validates required fields correctly
     - Test status enum rejects invalid values for Problem Notes
     - Test date coercion works for ISO date strings
     - Test draft field defaults to false when omitted
     - Skip exhaustive testing of all validation edge cases
-  - [ ] 2.2 Create content configuration file at src/content.config.ts
+  - [x] 2.2 Create content configuration file at src/content.config.ts
     - Use Astro v5 convention for config file location
     - Import defineCollection, z from 'astro:content'
     - Export collections object with both collection definitions
-  - [ ] 2.3 Define Problem Notes collection schema
+  - [x] 2.3 Define Problem Notes collection schema
     - title: z.string() - required
     - description: z.string() - required, 1-2 sentence framing
     - date: z.coerce.date() - required, ISO format coerced to Date
     - status: z.enum(["exploring", "evolving", "stable"]) - required
     - tags: z.array(z.string()).optional() - for future categorization
     - draft: z.boolean().default(false) - excludes from public when true
-  - [ ] 2.4 Define Case Studies collection schema
+  - [x] 2.4 Define Case Studies collection schema
     - title: z.string() - required
     - description: z.string() - required, what problem this case is about
     - date: z.coerce.date() - required, ISO format coerced to Date
     - context: z.string() - required, one-paragraph situational framing
     - outcome: z.string() - required, including imperfect or partial outcomes
     - draft: z.boolean().default(false) - excludes from public when true
-  - [ ] 2.5 Ensure content collection tests pass
+  - [x] 2.5 Ensure content collection tests pass
     - Run ONLY the tests written in 2.1
     - Verify schema validation catches invalid frontmatter
     - Do NOT run the entire test suite at this stage
