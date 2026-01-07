@@ -1,6 +1,6 @@
 # Product Roadmap
 
-1. [ ] Homepage as Filter — Create the landing page that clearly articulates the problem-first lens, setting expectations that this is a thinking space rather than a portfolio or pitch. Include a concise statement of purpose and navigation to core content areas. `S`
+1. [x] Homepage as Filter — Create the landing page that clearly articulates the problem-first lens, setting expectations that this is a thinking space rather than a portfolio or pitch. Include a concise statement of purpose and navigation to core content areas. `S`
 
 2. [ ] Content Architecture — Define and implement the content structure for Problem Notes and Case Studies, including frontmatter schema, URL patterns, and file organization for Markdown/MDX content. `S`
 
@@ -10,9 +10,9 @@
 
 5. [ ] Now Page — Implement a living "now" page for current explorations and focus areas. Should be easy to update frequently and signal that the site is actively maintained without formal publishing pressure. `XS`
 
-6. [ ] Typography and Visual Design — Establish minimal, typography-focused styling across all pages. Optimize for reading experience, signal density, and calm visual tone. No heavy frameworks—custom CSS with clear hierarchy. `S`
+6. [x] Typography and Visual Design — Establish minimal, typography-focused styling across all pages. Optimize for reading experience, signal density, and calm visual tone. No heavy frameworks—custom CSS with clear hierarchy. `S`
 
-7. [ ] Navigation and Information Architecture — Implement site-wide navigation that supports the core content areas (Home, Problem Notes, Case Studies, Now) with clear wayfinding and minimal friction. `XS`
+7. [x] Navigation and Information Architecture — Implement site-wide navigation that supports the core content areas (Home, Problem Notes, Case Studies, Now) with clear wayfinding and minimal friction. `XS`
 
 8. [ ] Invitation to Engage — Add clear but understated contact/engagement pathways. Design to encourage thoughtful outreach while the content quality itself filters for serious engagement. `XS`
 
