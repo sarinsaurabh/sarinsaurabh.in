@@ -4,7 +4,7 @@
 
 2. [x] Content Architecture — Define and implement the content structure for Problem Notes and Case Studies, including frontmatter schema, URL patterns, and file organization for Markdown/MDX content. `S`
 
-3. [ ] Problem Notes Stream — Build the thinking stream section displaying short, structured pieces on problems. Include list view with titles and brief descriptions, individual note pages, and clear visual treatment for "unfinished" or "evolving" status. `M`
+3. [x] Problem Notes Stream — Build the thinking stream section displaying short, structured pieces on problems. Include list view with titles and brief descriptions, individual note pages, and clear visual treatment for "unfinished" or "evolving" status. `M`
 
 4. [ ] Case Studies Section — Create the deep-dive case study section with pages that support longer-form content, constraint/trade-off documentation, and outcome reflection. Design for few entries with high signal density. `M`
 
