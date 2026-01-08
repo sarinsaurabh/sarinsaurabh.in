@@ -1,22 +1,51 @@
 ---
-title: "Example Case Study"
-description: "This is a placeholder case study demonstrating the content structure and frontmatter schema."
+title: "Migrating a Legacy Monolith to Services"
+description: "A measured approach to decomposing a decade-old monolithic application while maintaining business continuity and team velocity."
 date: 2026-01-07
-context: "This case study was created as part of the content architecture setup to validate that the content collection configuration works correctly with real MDX files."
-outcome: "Successfully demonstrates that Case Studies can be created with all required frontmatter fields and processed by the Astro content collection system."
+context: "A growing startup's Rails monolith had become a bottleneck for feature delivery and team autonomy."
+outcome: "Partial decomposition into three bounded services with clear ownership, reducing deploy friction and enabling parallel development."
 draft: true
 ---
 
-# Example Case Study
+## Problem / Context
 
-This is a placeholder case study created to verify the content collection configuration works correctly.
+The application had grown organically over eight years. What started as a clean Rails codebase had accumulated layers of complexity: tightly coupled domain models, shared database tables used by unrelated features, and a deployment process that required coordination across three teams.
 
-## Background
+Feature velocity had slowed. A change to the billing module often required regression testing for the entire user management flow. Teams waited on each other for release windows.
 
-This file demonstrates:
+## Constraints
 
-- Valid frontmatter structure for Case Studies
-- MDX file format within the content collection
-- Draft status to exclude from public routes
+Several factors shaped the available options:
 
-The content here is minimal and intended only for testing purposes.
+- **Team capacity**: Two senior engineers with architecture experience, but no dedicated platform team.
+- **Business continuity**: Revenue-critical features could not tolerate extended outages during migration.
+- **Timeline pressure**: Leadership expected measurable progress within two quarters.
+- **Technical debt**: Significant portions of the codebase lacked comprehensive test coverage.
+
+## Trade-offs Considered
+
+**Full rewrite vs. incremental extraction**: A clean rewrite would have addressed technical debt comprehensively but required 12-18 months with high execution risk. Incremental extraction preserved optionality and allowed course correction.
+
+**Service mesh vs. simple HTTP**: A service mesh would provide observability and resilience patterns, but added operational complexity for a team without platform expertise. We chose plain HTTP with structured logging and explicit retry logic.
+
+**Shared database vs. database per service**: True isolation would require significant data migration effort. We accepted a transitional phase with shared database access, bounded by strict schema ownership rules.
+
+## Decision Rationale
+
+We chose the strangler fig pattern: new features would be built in separate services from the start, while high-value bounded contexts would be extracted incrementally from the monolith.
+
+The decision prioritized:
+
+1. Learning over perfection: Starting with a lower-risk extraction (notifications) to build team confidence and identify patterns.
+2. Reversibility: Each extraction could be rolled back by restoring the feature flag state.
+3. Pragmatic boundaries: Domain boundaries followed team structure rather than theoretical purity.
+
+## Outcome and Reflection
+
+After two quarters, three services operated independently: notifications, analytics ingestion, and billing calculations. Deploy frequency increased for these domains, and teams could work in parallel without coordination overhead.
+
+What worked well: Feature flags enabled gradual traffic shifting, and the notifications extraction served as a low-risk training ground. The team developed extraction playbooks that accelerated subsequent efforts.
+
+What I would reconsider: We underestimated the coordination cost of the transitional shared database. Clearer data ownership boundaries from the start would have reduced debugging time for cross-service issues.
+
+The monolith remains for core user-facing features. Complete decomposition was never the goal; the goal was reducing friction where it mattered most.

@@ -129,14 +129,14 @@ This feature implements a deep-dive case study section with list and individual 
 #### Task Group 3: Placeholder Cleanup and Content Validation
 **Dependencies:** Task Groups 1, 2
 
-- [ ] 3.0 Complete cleanup and content setup
-  - [ ] 3.1 Write 2 focused verification tests
+- [x] 3.0 Complete cleanup and content setup
+  - [x] 3.1 Write 2 focused verification tests
     - Test that `/case-studies` route serves the new list page (not placeholder)
     - Test that navigation to `/case-studies` from other pages works correctly
-  - [ ] 3.2 Delete placeholder file `/src/pages/case-studies.astro`
+  - [x] 3.2 Delete placeholder file `/src/pages/case-studies.astro`
     - Verify new `/src/pages/case-studies/index.astro` handles the route
     - Confirm no 404 or routing conflicts
-  - [ ] 3.3 Update example case study for proper demonstration
+  - [x] 3.3 Update example case study for proper demonstration
     - Edit `/src/content/case-studies/example-case-study.mdx`
     - Update frontmatter with realistic context and outcome (1-2 sentences each)
     - Add recommended narrative structure sections in body:
@@ -146,11 +146,11 @@ This feature implements a deep-dive case study section with list and individual 
       - Decision rationale
       - Outcome & reflection
     - Keep `draft: true` to prevent display in production
-  - [ ] 3.4 Verify navigation integration
+  - [x] 3.4 Verify navigation integration
     - Confirm BaseLayout nav link `/case-studies` points to correct page
     - Verify active state works correctly when on case studies pages
     - Test navigation from list to individual pages and back
-  - [ ] 3.5 Ensure cleanup tests pass
+  - [x] 3.5 Ensure cleanup tests pass
     - Run ONLY the 2 tests written in 3.1
     - Verify routing works correctly after placeholder removal
 
