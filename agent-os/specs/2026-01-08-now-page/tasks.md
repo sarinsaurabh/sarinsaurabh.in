@@ -92,11 +92,11 @@ This is a lightweight feature implementation that creates a single static "Now" 
 #### Task Group 3: Integration Verification
 **Dependencies:** Task Groups 1-2
 
-- [ ] 3.0 Verify complete feature integration
-  - [ ] 3.1 Run all Now page tests (from 1.1 and 2.1)
+- [x] 3.0 Verify complete feature integration
+  - [x] 3.1 Run all Now page tests (from 1.1 and 2.1)
     - Expected total: 7 tests
     - All tests should pass
-  - [ ] 3.2 Manual verification checklist
+  - [x] 3.2 Manual verification checklist
     - Start dev server (`npm run dev`)
     - Navigate to /now
     - Verify page loads without errors
@@ -106,7 +106,7 @@ This is a lightweight feature implementation that creates a single static "Now" 
     - Verify typography matches rest of site (Source Serif 4, 680px max-width)
     - Verify navigation shows "Now" as active state
     - Verify no console errors
-  - [ ] 3.3 Build verification
+  - [x] 3.3 Build verification
     - Run `npm run build`
     - Verify build completes without errors
     - Verify /now is included in static output
