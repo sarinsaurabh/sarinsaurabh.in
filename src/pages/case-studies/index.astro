@@ -1,0 +1,183 @@
+---
+/**
+ * Case Studies List Page
+ * Displays all non-draft Case Studies in reverse chronological order.
+ * Showcases title, description, context, outcome for each entry.
+ * Typography-first design matching Problem Notes aesthetic.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { filterDrafts } from '../../lib/content';
+import { getCollection } from 'astro:content';
+
+// Fetch all case studies
+const allStudies = await getCollection('case-studies');
+
+// Filter drafts based on environment (excluded in production, visible in dev)
+const filteredStudies = filterDrafts(allStudies);
+
+// Sort by date descending (newest first)
+const sortedStudies = filteredStudies.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+/**
+ * Formats a date for display
+ */
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<BaseLayout
+  title="Case Studies - Saurabh Sarin"
+  description="Deep-dive explorations of constraints, trade-offs, and decision rationale behind specific problems and their outcomes."
+>
+  <article class="case-studies-page">
+    <section class="intro">
+      <h1>Case Studies</h1>
+      <p class="subtitle">
+        Deep-dive explorations of constraints, trade-offs, and decision rationale.
+      </p>
+    </section>
+
+    <section class="studies-list">
+      {sortedStudies.length > 0 ? (
+        <ul class="studies">
+          {sortedStudies.map((entry) => (
+            <li class="study-item">
+              <a href={`/case-studies/${entry.slug}`} class="study-title">
+                {entry.data.title}
+              </a>
+              <p class="study-description">{entry.data.description}</p>
+              <p class="study-context">
+                <span class="label">Context:</span> {entry.data.context}
+              </p>
+              <p class="study-outcome">
+                <span class="label">Outcome:</span> {entry.data.outcome}
+              </p>
+              <div class="study-meta">
+                <span class="study-date">{formatDate(entry.data.date)}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="no-studies">No case studies yet.</p>
+      )}
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Case Studies List Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   * Typography as primary design element
+   * No status indicators (unlike Problem Notes)
+   */
+
+  .case-studies-page {
+    /* Page container inherits main styling from global.css */
+  }
+
+  /* Intro Section */
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .intro h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 0;
+  }
+
+  /* Studies List */
+  .studies-list {
+    margin-bottom: 2rem;
+  }
+
+  .studies {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .study-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .study-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Study Title - Primary emphasis */
+  .study-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .study-title:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Study Description - Secondary emphasis */
+  .study-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Context and Outcome - Tertiary information */
+  .study-context,
+  .study-outcome {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  .study-context .label,
+  .study-outcome .label {
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Study Meta - Date only (no status) */
+  .study-meta {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .study-date {
+    font-weight: 400;
+  }
+
+  /* Empty State */
+  .no-studies {
+    color: #666;
+    font-style: italic;
+  }
+</style>
