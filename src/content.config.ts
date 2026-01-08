@@ -1,6 +1,6 @@
 /**
  * Astro Content Collections Configuration
- * Defines schemas for Problem Notes, Case Studies, and Now page collections
+ * Defines schemas for Problem Notes, Case Studies, and the "Now page collections
  */
 
 import { defineCollection, z } from 'astro:content';

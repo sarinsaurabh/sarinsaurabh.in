@@ -14,7 +14,7 @@
 
 7. [x] Navigation and Information Architecture — Implement site-wide navigation that supports the core content areas (Home, Problem Notes, Case Studies, Now) with clear wayfinding and minimal friction. `XS`
 
-8. [ ] Invitation to Engage — Add clear but understated contact/engagement pathways. Design to encourage thoughtful outreach while the content quality itself filters for serious engagement. `XS`
+8. [x] Invitation to Engage — Add clear but understated contact/engagement pathways. Design to encourage thoughtful outreach while the content quality itself filters for serious engagement. `XS`
 
 > Notes
 > - Order reflects technical dependencies: homepage establishes frame, content architecture enables Problem Notes and Case Studies, styling unifies the experience
