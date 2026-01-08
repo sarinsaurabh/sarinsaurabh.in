@@ -66,13 +66,13 @@ This feature implements a deep-dive case study section with list and individual 
 #### Task Group 2: Individual Case Study Pages
 **Dependencies:** Task Group 1
 
-- [ ] 2.0 Complete individual Case Study pages
-  - [ ] 2.1 Write 4 focused tests for individual page functionality
+- [x] 2.0 Complete individual Case Study pages
+  - [x] 2.1 Write 4 focused tests for individual page functionality
     - Test that individual page renders with correct title in header
     - Test that MDX content renders successfully
     - Test that back navigation link is present and correct
     - Test that date displays in "Month Day, Year" format
-  - [ ] 2.2 Create `/src/pages/case-studies/[slug].astro`
+  - [x] 2.2 Create `/src/pages/case-studies/[slug].astro`
     - Import `BaseLayout` from `../../layouts/BaseLayout.astro`
     - Import `filterDrafts` from `../../lib/content`
     - Import `getCollection` from `astro:content`
@@ -88,29 +88,29 @@ This feature implements a deep-dive case study section with list and individual 
     - Extract `entry` from `Astro.props`
     - Render MDX: `const { Content } = await entry.render();`
     - Reuse `formatDate` function pattern from Problem Notes
-  - [ ] 2.3 Implement page header
+  - [x] 2.3 Implement page header
     - Display title in `<h1>` element
     - Display formatted date in meta section
     - Do NOT include status indicator (case studies are completed work)
     - Meta section: `font-size: 0.9rem`, `color: #666`
-  - [ ] 2.4 Implement content section
+  - [x] 2.4 Implement content section
     - Render MDX content with `<Content />` component
     - Apply slightly increased vertical rhythm for longer reading comfort
     - Content wrapper margin: `margin-bottom: 2.5rem` (vs 2rem in Problem Notes)
-  - [ ] 2.5 Implement back navigation
+  - [x] 2.5 Implement back navigation
     - Add navigation section at bottom of page
     - Link text: "Back to Case Studies"
     - Link href: `/case-studies`
     - Style: `font-size: 0.9rem`, `color: #666`, hover `color: #111`
     - Top border separator: `border-top: 1px solid #eee`, `padding-top: 2rem`, `margin-top: 2.5rem`
-  - [ ] 2.6 Apply scoped component styles
+  - [x] 2.6 Apply scoped component styles
     - Header margin: `margin-bottom: 2.5rem` (slightly increased from Problem Notes)
     - No tags section (not applicable to case studies)
     - No status indicator styling
-  - [ ] 2.7 Set appropriate page metadata
+  - [x] 2.7 Set appropriate page metadata
     - Title format: `${entry.data.title} - Case Studies - Saurabh Sarin`
     - Description: use `entry.data.description` from frontmatter
-  - [ ] 2.8 Ensure individual page tests pass
+  - [x] 2.8 Ensure individual page tests pass
     - Run ONLY the 4 tests written in 2.1
     - Verify page renders correctly with MDX content
     - Do NOT run the entire test suite at this stage

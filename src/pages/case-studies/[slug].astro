@@ -1,0 +1,121 @@
+---
+/**
+ * Individual Case Study Page
+ * Displays a single case study with title, date, and MDX content.
+ * Uses Astro dynamic routes with getStaticPaths for static generation.
+ * Note: No status indicator (case studies describe completed work).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { filterDrafts } from '../../lib/content';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  // Fetch all case studies
+  const allStudies = await getCollection('case-studies');
+
+  // Filter drafts based on environment (excluded in production, visible in dev)
+  const filteredStudies = filterDrafts(allStudies);
+
+  // Map entries to static paths with entry as prop
+  return filteredStudies.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+// Render MDX content
+const { Content } = await entry.render();
+
+/**
+ * Formats a date for display in "Month Day, Year" format
+ */
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<BaseLayout
+  title={`${entry.data.title} - Case Studies - Saurabh Sarin`}
+  description={entry.data.description}
+>
+  <article class="case-study">
+    <header class="study-header">
+      <h1>{entry.data.title}</h1>
+      <div class="study-meta">
+        <span class="study-date">{formatDate(entry.data.date)}</span>
+      </div>
+    </header>
+
+    <div class="study-content">
+      <Content />
+    </div>
+
+    <nav class="back-navigation">
+      <a href="/case-studies">Back to Case Studies</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Case Study Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   * Typography as primary design element
+   * Slightly increased vertical rhythm for longer reading comfort
+   */
+
+  .case-study {
+    /* Page container inherits main styling from global.css */
+  }
+
+  /* Study Header - slightly increased margin for longer reading */
+  .study-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .study-header h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
+    margin-bottom: 1rem;
+  }
+
+  /* Study Meta - Date display only (no status for case studies) */
+  .study-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .study-date {
+    font-weight: 400;
+  }
+
+  /* Study Content - MDX inherits global typography */
+  /* Slightly increased margin for longer reading comfort */
+  .study-content {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Back Navigation */
+  .back-navigation {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .back-navigation a {
+    /* Inherits understated link styling from global.css */
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .back-navigation a:hover {
+    color: #111;
+  }
+</style>
