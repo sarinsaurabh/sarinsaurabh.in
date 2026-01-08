@@ -1,38 +1,78 @@
 ---
 /**
- * Now Page - Placeholder Page
- * Temporary page until Now page spec is implemented.
- * Uses BaseLayout for consistent site structure.
+ * Now Page
+ * Displays current focus areas and what I'm thinking about.
+ * Content is stored as MDX in the now collection for easy updates.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch the single now page entry
+const nowEntries = await getCollection('now');
+const entry = nowEntries[0];
+
+// Render MDX content
+const { Content } = await entry.render();
+
+/**
+ * Formats a date for display
+ */
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 ---
 
-<BaseLayout title="Now - Saurabh Sarin" description="What I'm focused on right now.">
-  <article class="placeholder-page">
-    <h1>Now</h1>
-    <p class="coming-soon">Coming soon.</p>
-    <p class="placeholder-description">
-      This page will share what I'm currently focused on and thinking about.
-    </p>
+<BaseLayout
+  title="Now - Saurabh Sarin"
+  description={entry.data.description}
+>
+  <article class="now-page">
+    <header class="now-header">
+      <h1>Now</h1>
+      <p class="now-meta">
+        Last updated: {formatDate(entry.data.lastUpdated)}
+      </p>
+    </header>
+
+    <div class="now-content">
+      <Content />
+    </div>
   </article>
 </BaseLayout>
 
 <style>
-  .placeholder-page {
-    /* Minimal styling for placeholder content */
+  /* Now Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   * Typography as primary design element
+   */
+
+  .now-page {
+    /* Page container inherits main styling from global.css */
   }
 
-  .placeholder-page h1 {
-    margin-bottom: 1.5rem;
+  /* Now Header */
+  .now-header {
+    margin-bottom: 2rem;
   }
 
-  .coming-soon {
-    font-style: italic;
-    color: #666;
+  .now-header h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
     margin-bottom: 1rem;
   }
 
-  .placeholder-description {
-    color: #333;
+  /* Now Meta - Last updated date with subdued styling */
+  .now-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+  }
+
+  /* Now Content - MDX inherits global typography */
+  .now-content {
+    margin-bottom: 2rem;
   }
 </style>

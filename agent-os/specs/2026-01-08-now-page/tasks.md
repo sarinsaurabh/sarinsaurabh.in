@@ -49,33 +49,33 @@ This is a lightweight feature implementation that creates a single static "Now" 
 #### Task Group 2: Now Page Implementation
 **Dependencies:** Task Group 1
 
-- [ ] 2.0 Complete Now page implementation
-  - [ ] 2.1 Write 4 focused tests for Now page functionality
+- [x] 2.0 Complete Now page implementation
+  - [x] 2.1 Write 4 focused tests for Now page functionality
     - Test that page uses BaseLayout with correct title prop (`Now - Saurabh Sarin`)
     - Test that page fetches from `now` collection and renders MDX content
     - Test that `lastUpdated` date is displayed with subdued meta styling
     - Test that date is formatted as "Month Day, Year" using `toLocaleDateString`
-  - [ ] 2.2 Replace placeholder at `/src/pages/now.astro`
+  - [x] 2.2 Replace placeholder at `/src/pages/now.astro`
     - Import BaseLayout from `../layouts/BaseLayout.astro`
     - Import `getCollection` from `astro:content`
     - Fetch single entry from `now` collection
     - Render MDX content using `entry.render()` pattern from Problem Notes
-  - [ ] 2.3 Implement page structure and layout
+  - [x] 2.3 Implement page structure and layout
     - Page title: "Now - Saurabh Sarin"
     - Description: pulled from frontmatter
     - Single `<article>` wrapper (no extra layout components)
     - h1 heading: "Now"
     - Display `lastUpdated` prominently below h1
-  - [ ] 2.4 Add date formatting and styling
+  - [x] 2.4 Add date formatting and styling
     - Copy `formatDate` function from Problem Notes `[slug].astro`
     - Format as "Month Day, Year" (e.g., "January 8, 2026")
     - Style as subdued metadata: 0.9rem font-size, #666 color
     - Reference `.note-meta` pattern from Problem Notes
-  - [ ] 2.5 Render MDX content
+  - [x] 2.5 Render MDX content
     - Use `<Content />` component from `entry.render()`
     - Wrap in content div for styling isolation
     - MDX content inherits global typography from global.css
-  - [ ] 2.6 Ensure Now page tests pass
+  - [x] 2.6 Ensure Now page tests pass
     - Run ONLY the 4 tests written in 2.1
     - Verify page renders with correct structure
     - Do NOT run the entire test suite at this stage
