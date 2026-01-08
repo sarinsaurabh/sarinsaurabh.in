@@ -1,6 +1,6 @@
 /**
  * Astro Content Collections Configuration
- * Defines schemas for Problem Notes and Case Studies collections
+ * Defines schemas for Problem Notes, Case Studies, and Now page collections
  */
 
 import { defineCollection, z } from 'astro:content';
@@ -37,7 +37,21 @@ const caseStudies = defineCollection({
   }),
 });
 
+/**
+ * Now Collection
+ * Single-entry collection for the living "Now" page
+ * Captures current focus and orientation, not progress updates
+ */
+const now = defineCollection({
+  type: 'content',
+  schema: z.object({
+    lastUpdated: z.coerce.date(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   'problem-notes': problemNotes,
   'case-studies': caseStudies,
+  'now': now,
 };
