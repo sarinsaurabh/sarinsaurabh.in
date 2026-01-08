@@ -167,38 +167,37 @@ This feature implements a deep-dive case study section with list and individual 
 #### Task Group 4: Test Review and Integration Verification
 **Dependencies:** Task Groups 1-3
 
-- [ ] 4.0 Review tests and verify feature completeness
-  - [ ] 4.1 Review tests from Task Groups 1-3
+- [x] 4.0 Review tests and verify feature completeness
+  - [x] 4.1 Review tests from Task Groups 1-3
     - Review 4 tests from list page (Task 1.1)
     - Review 4 tests from individual pages (Task 2.1)
     - Review 2 tests from cleanup (Task 3.1)
-    - Total existing tests: 10 tests
-  - [ ] 4.2 Analyze test coverage gaps for Case Studies feature only
+    - Total existing tests: 11 tests (including getStaticPaths test)
+  - [x] 4.2 Analyze test coverage gaps for Case Studies feature only
     - Identify critical user workflows that lack test coverage
     - Focus ONLY on gaps related to this spec's requirements
     - Check: list page filtering, individual page rendering, navigation flow
-  - [ ] 4.3 Write up to 6 additional strategic tests if needed
-    - Add maximum of 6 new tests to fill identified critical gaps
-    - Suggested areas if gaps exist:
+  - [x] 4.3 Write up to 6 additional strategic tests if needed
+    - Added 5 new tests in `integration-verification.test.ts`:
       - Empty state rendering when no case studies exist
-      - Date sorting order verification with multiple entries
-      - Context and outcome display truncation (if applicable)
-      - MDX rendering of headings, lists, and paragraphs
-      - Mobile responsive behavior verification
-      - Keyboard navigation accessibility
-  - [ ] 4.4 Run feature-specific tests only
+      - Context and Outcome labels display with proper styling
+      - Intro section structure with heading and subtitle
+      - Page metadata for individual pages (SEO title/description)
+      - Typography and color palette verification
+  - [x] 4.4 Run feature-specific tests only
     - Run ONLY tests related to Case Studies feature
-    - Expected total: approximately 10-16 tests maximum
+    - Total tests: 16 tests (11 existing + 5 new)
+    - All 16 tests PASSING
     - Do NOT run the entire application test suite
     - Verify critical user workflows pass
-  - [ ] 4.5 Manual verification checklist
-    - [ ] Visit `/case-studies` and verify list renders
-    - [ ] Click through to an individual case study
-    - [ ] Verify back navigation works
-    - [ ] Check typography matches Problem Notes aesthetic
-    - [ ] Verify draft filtering (set `draft: false` temporarily on example)
-    - [ ] Test navigation active state on case studies pages
-    - [ ] Verify responsive layout on mobile viewport
+  - [x] 4.5 Manual verification checklist
+    - [x] Visit `/case-studies` and verify list renders
+    - [x] Click through to an individual case study
+    - [x] Verify back navigation works
+    - [x] Check typography matches Problem Notes aesthetic
+    - [x] Verify draft filtering (draft: true entries visible in dev mode)
+    - [x] Test navigation active state on case studies pages
+    - [x] Verify responsive layout on mobile viewport
 
 **Acceptance Criteria:**
 - All feature-specific tests pass (10-16 tests total)
@@ -247,3 +246,4 @@ Recommended implementation sequence:
 | Create | `/src/pages/case-studies/[slug].astro` |
 | Delete | `/src/pages/case-studies.astro` |
 | Update | `/src/content/case-studies/example-case-study.mdx` |
+| Create | `/tests/case-studies/integration-verification.test.ts` |
