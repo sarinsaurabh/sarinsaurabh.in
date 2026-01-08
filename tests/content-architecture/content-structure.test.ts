@@ -42,15 +42,15 @@ describe('Content Structure', () => {
     expect(data.draft).toBe(true);
   });
 
-  it('should parse frontmatter correctly from Case Study placeholder', () => {
-    const placeholderFile = path.join(
+  it('should parse frontmatter correctly from Case Study example', () => {
+    const exampleFile = path.join(
       projectRoot,
       'src/content/case-studies/example-case-study.mdx'
     );
-    const fileContent = fs.readFileSync(placeholderFile, 'utf-8');
+    const fileContent = fs.readFileSync(exampleFile, 'utf-8');
     const { data } = matter(fileContent);
 
-    expect(data.title).toBe('Example Case Study');
+    expect(data.title).toBe('Migrating a Legacy Monolith to Services');
     expect(data.description).toBeDefined();
     expect(data.date).toBeDefined();
     expect(data.context).toBeDefined();

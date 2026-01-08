@@ -6,7 +6,7 @@
 
 3. [x] Problem Notes Stream — Build the thinking stream section displaying short, structured pieces on problems. Include list view with titles and brief descriptions, individual note pages, and clear visual treatment for "unfinished" or "evolving" status. `M`
 
-4. [ ] Case Studies Section — Create the deep-dive case study section with pages that support longer-form content, constraint/trade-off documentation, and outcome reflection. Design for few entries with high signal density. `M`
+4. [x] Case Studies Section — Create the deep-dive case study section with pages that support longer-form content, constraint/trade-off documentation, and outcome reflection. Design for few entries with high signal density. `M`
 
 5. [ ] Now Page — Implement a living "now" page for current explorations and focus areas. Should be easy to update frequently and signal that the site is actively maintained without formal publishing pressure. `XS`
 
