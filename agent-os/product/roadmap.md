@@ -8,7 +8,7 @@
 
 4. [x] Case Studies Section — Create the deep-dive case study section with pages that support longer-form content, constraint/trade-off documentation, and outcome reflection. Design for few entries with high signal density. `M`
 
-5. [ ] Now Page — Implement a living "now" page for current explorations and focus areas. Should be easy to update frequently and signal that the site is actively maintained without formal publishing pressure. `XS`
+5. [x] Now Page — Implement a living "now" page for current explorations and focus areas. Should be easy to update frequently and signal that the site is actively maintained without formal publishing pressure. `XS`
 
 6. [x] Typography and Visual Design — Establish minimal, typography-focused styling across all pages. Optimize for reading experience, signal density, and calm visual tone. No heavy frameworks—custom CSS with clear hierarchy. `S`
 
