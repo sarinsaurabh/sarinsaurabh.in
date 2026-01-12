@@ -99,14 +99,14 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
   .subtitle {
     font-size: 1.125rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--color-text-secondary);
     margin-bottom: 0.5rem;
   }
 
   .additional-line {
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-style: italic;
-    color: #333;
+    color: var(--color-text-secondary);
     margin-bottom: 0;
   }
 
@@ -124,7 +124,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
   .note-item {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .note-item:last-child {
@@ -138,7 +138,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
     display: block;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #111;
+    color: var(--color-text);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
@@ -153,7 +153,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
   .note-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: #333;
+    color: var(--color-text-secondary);
     margin-bottom: 0.75rem;
   }
 
@@ -163,7 +163,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
     align-items: baseline;
     gap: 0.75rem;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-text-muted);
   }
 
   /* Typography-based Status Indicators */
@@ -196,7 +196,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
 
   /* Empty State */
   .no-notes {
-    color: #666;
+    color: var(--color-text-muted);
     font-style: italic;
   }
 </style>

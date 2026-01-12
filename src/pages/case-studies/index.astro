@@ -96,7 +96,7 @@ function formatDate(date: Date): string {
   .subtitle {
     font-size: 1.125rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--color-text-secondary);
     margin-bottom: 0;
   }
 
@@ -114,7 +114,7 @@ function formatDate(date: Date): string {
   .study-item {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .study-item:last-child {
@@ -128,7 +128,7 @@ function formatDate(date: Date): string {
     display: block;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #111;
+    color: var(--color-text);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
@@ -143,7 +143,7 @@ function formatDate(date: Date): string {
   .study-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: #333;
+    color: var(--color-text-secondary);
     margin-bottom: 0.75rem;
   }
 
@@ -152,14 +152,14 @@ function formatDate(date: Date): string {
   .study-outcome {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 0.5rem;
   }
 
   .study-context .label,
   .study-outcome .label {
     font-weight: 600;
-    color: #333;
+    color: var(--color-text-secondary);
   }
 
   /* Study Meta - Date only (no status) */
@@ -167,7 +167,7 @@ function formatDate(date: Date): string {
     display: flex;
     align-items: baseline;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-text-muted);
     margin-top: 0.5rem;
   }
 
@@ -177,7 +177,7 @@ function formatDate(date: Date): string {
 
   /* Empty State */
   .no-studies {
-    color: #666;
+    color: var(--color-text-muted);
     font-style: italic;
   }
 </style>

@@ -9,9 +9,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout>
   <article class="homepage">
-    <section class="opening-statement">
-      <p class="statement-lead">Problem-first thinking.</p>
-      <p class="statement-body">
+    <section class="intro">
+      <h1>Problem-first thinking.</h1>
+      <p class="subtitle">
         In a world full of solutions, the real problem often remains unsolved.
         This is a public workspace for thinking through complex, ambiguous problems.
       </p>
@@ -38,29 +38,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <style>
   /* Homepage-specific styling
    * Typography as primary design element
-   * Generous whitespace for calm, reading-first experience
+   * Follows same patterns as other pages for consistency
    */
 
   .homepage {
-    /* Establish vertical rhythm with generous spacing */
+    /* Page container inherits main styling from global.css */
   }
 
-  /* Opening Statement Section */
-  .opening-statement {
+  /* Intro Section - matches Problem Notes and Case Studies */
+  .intro {
     margin-bottom: 3rem;
   }
 
-  .statement-lead {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
+  .intro h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
+    margin-bottom: 1rem;
   }
 
-  .statement-body {
+  .subtitle {
     font-size: 1.125rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
   }
 
   /* What You'll Find Here Section */
@@ -69,8 +68,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .what-youll-find h2 {
-    font-size: 1.125rem;
-    font-weight: 600;
+    /* Uses h2 styling from global.css: 1.35rem/600 */
     margin-bottom: 1rem;
   }
 
@@ -95,16 +93,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .entry-link {
-    /* Understated inline link style - inherits global link styling */
-    /* No prominent CTA button styling */
-    font-size: 1rem;
-    color: #111;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
-
-  .entry-link:hover {
-    text-decoration-thickness: 2px;
+    /* Inherits global link styling */
   }
 </style>

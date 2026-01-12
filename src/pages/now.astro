@@ -31,43 +31,42 @@ function formatDate(date: Date): string {
   description={entry.data.description}
 >
   <article class="now-page">
-    <header class="now-header">
+    <section class="intro">
       <h1>Now</h1>
-      <p class="now-meta">
+      <p class="subtitle">
         Last updated: {formatDate(entry.data.lastUpdated)}
       </p>
-    </header>
+    </section>
 
-    <div class="now-content">
+    <section class="now-content">
       <Content />
-    </div>
+    </section>
   </article>
 </BaseLayout>
 
 <style>
   /* Now Page Styles
    * Follows global.css patterns with text-first, calm aesthetic
-   * Typography as primary design element
    */
 
   .now-page {
     /* Page container inherits main styling from global.css */
   }
 
-  /* Now Header */
-  .now-header {
-    margin-bottom: 2rem;
+  /* Intro Section - matches other pages */
+  .intro {
+    margin-bottom: 3rem;
   }
 
-  .now-header h1 {
+  .intro h1 {
     /* Uses h1 styling from global.css: 1.75rem/600 */
     margin-bottom: 1rem;
   }
 
-  /* Now Meta - Last updated date with subdued styling */
-  .now-meta {
-    font-size: 0.9rem;
-    color: #666;
+  .subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
     margin-bottom: 0;
   }
 

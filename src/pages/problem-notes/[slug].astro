@@ -104,7 +104,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
     align-items: baseline;
     gap: 0.75rem;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-text-muted);
   }
 
   /* Typography-based Status Indicators */
@@ -143,7 +143,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
   /* Tags Section - Visually understated at end of page */
   .note-tags {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 2rem;
   }
 
@@ -160,16 +160,16 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
   .back-navigation {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border);
   }
 
   .back-navigation a {
     /* Inherits understated link styling from global.css */
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-text-muted);
   }
 
   .back-navigation a:hover {
-    color: #111;
+    color: var(--color-text);
   }
 </style>

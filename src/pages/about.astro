@@ -8,32 +8,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="About - Saurabh Sarin" description="About Saurabh Sarin and this site.">
-  <article class="placeholder-page">
-    <h1>About</h1>
-    <p class="coming-soon">Coming soon.</p>
-    <p class="placeholder-description">
-      This page will share the human context behind this site -
-      who I am and why I think in public.
-    </p>
+  <article class="about-page">
+    <section class="intro">
+      <h1>About</h1>
+      <p class="subtitle">Coming soon.</p>
+    </section>
+
+    <section class="about-content">
+      <p>
+        This page will share the human context behind this site -
+        who I am and why I think in public.
+      </p>
+    </section>
   </article>
 </BaseLayout>
 
 <style>
-  .placeholder-page {
-    /* Minimal styling for placeholder content */
+  /* About Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   */
+
+  .about-page {
+    /* Page container inherits main styling from global.css */
   }
 
-  .placeholder-page h1 {
-    margin-bottom: 1.5rem;
+  /* Intro Section - matches other pages */
+  .intro {
+    margin-bottom: 3rem;
   }
 
-  .coming-soon {
-    font-style: italic;
-    color: #666;
+  .intro h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
     margin-bottom: 1rem;
   }
 
-  .placeholder-description {
-    color: #333;
+  .subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* About Content */
+  .about-content {
+    color: var(--color-text-secondary);
   }
 </style>
