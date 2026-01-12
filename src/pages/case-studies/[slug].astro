@@ -57,7 +57,7 @@ function formatDate(date: Date): string {
     </div>
 
     <nav class="back-navigation">
-      <a href="/case-studies">Back to Case Studies</a>
+      <a href="/case-studies">← Back to Case Studies</a>
     </nav>
   </article>
 </BaseLayout>
@@ -102,17 +102,15 @@ function formatDate(date: Date): string {
     margin-bottom: 2.5rem;
   }
 
-  /* Back Navigation */
+  /* Back Navigation - quiet, immediately after content */
   .back-navigation {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
+    margin-top: 2rem;
   }
 
   .back-navigation a {
-    /* Inherits understated link styling from global.css */
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
+    text-decoration: none;
   }
 
   .back-navigation a:hover {

@@ -73,7 +73,7 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
     )}
 
     <nav class="back-navigation">
-      <a href="/problem-notes">Back to Problem Notes</a>
+      <a href="/problem-notes">← Back to Problem Notes</a>
     </nav>
   </article>
 </BaseLayout>
@@ -156,17 +156,15 @@ function getStatusClass(status: 'exploring' | 'evolving' | 'stable'): string {
     font-weight: 400;
   }
 
-  /* Back Navigation */
+  /* Back Navigation - quiet, immediately after content */
   .back-navigation {
     margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
   }
 
   .back-navigation a {
-    /* Inherits understated link styling from global.css */
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
+    text-decoration: none;
   }
 
   .back-navigation a:hover {
