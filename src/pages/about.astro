@@ -1,23 +1,54 @@
 ---
 /**
- * About Page - Placeholder Page
- * Temporary page until About page spec is implemented.
+ * About Page
+ * Shares the human context behind this site.
  * Uses BaseLayout for consistent site structure.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About - Saurabh Sarin" description="About Saurabh Sarin and this site.">
+<BaseLayout title="About - Saurabh Sarin" description="I work on complex, ambiguous problems at the intersection of product, technology, and learning.">
   <article class="about-page">
     <section class="intro">
       <h1>About</h1>
-      <p class="subtitle">Coming soon.</p>
+      <p class="subtitle">
+        I work on complex, ambiguous problems at the intersection of product, technology, and learning.
+      </p>
     </section>
 
     <section class="about-content">
       <p>
-        This page will share the human context behind this site -
-        who I am and why I think in public.
+        Over the years, I have spent most of my time in environments where the problem is not clearly defined, the constraints keep changing, and the right answer is rarely obvious upfront. My default mode in these situations is to slow down, understand the problem deeply, and resist jumping to solutions too early.
+      </p>
+
+      <p>A few things that tend to show up consistently in my work:
+      <ul>
+        <li><strong>Problem-first thinking.</strong> I spend disproportionate time framing the problem before committing to a direction.
+      
+        <li><strong>Translation between worlds.</strong> I often operate between business, technology, and people, making ideas legible across these boundaries.
+    
+        <li><strong>Structure in ambiguity.</strong> I am comfortable working when things are messy and incomplete, and I enjoy bringing clarity without oversimplifying.
+      
+        <li><strong>Fast, durable learning.</strong> I pick up new domains quickly, but I care more about depth than surface familiarity.
+      </ul>
+      </p>
+    </section>
+
+    <section class="about-site">
+      <p>
+        This site is not a portfolio or a résumé. It is a public workspace.
+      </p>
+
+      <p>
+        The <a href="/problem-notes">Problem Notes</a> are short explorations of questions I am actively thinking about. <a href="/case-studies">Case Studies</a> document how some of those questions played out in real situations, including the trade-offs and imperfect outcomes. The <a href="/now">Now</a> page captures what currently has my attention.
+      </p>
+
+      <p>
+        I do not publish frequently, and I do not aim to be exhaustive. I write when I feel I have something worth articulating, even if the thinking is unfinished.
+      </p>
+
+      <p>
+        If something here resonates and you want to think through a problem together, you can reach me by <a href="mailto:sarin.saurabh@gmail.com">email</a>.
       </p>
     </section>
   </article>
@@ -46,12 +77,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--color-text-secondary);
-    font-style: italic;
     margin-bottom: 0;
   }
 
   /* About Content */
   .about-content {
-    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .about-content strong {
+    font-weight: 600;
+  }
+
+  /* About Site Section */
+  .about-site {
+    margin-bottom: 0;
   }
 </style>
