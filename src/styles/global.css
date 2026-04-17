@@ -104,6 +104,19 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Callouts via blockquote
+ * For ideas that should land harder than the surrounding prose.
+ * Subtle left border, slightly larger type. Use sparingly.
+ */
+blockquote {
+  border-left: 3px solid var(--color-text-muted);
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
 /* Content Layout Patterns */
 .content-column {
   max-width: 680px;
