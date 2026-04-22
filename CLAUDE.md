@@ -31,9 +31,11 @@ Astro 5 static site (`output: 'static'`) built around content collections. No cl
 **Content collections** (`src/content.config.ts`) define three schemas, each with strict Zod validation:
 - `problem-notes` — requires `status: 'exploring' | 'evolving' | 'stable'`, optional `tags`, `draft` boolean
 - `case-studies` — requires `context` and `outcome` fields alongside title/description/date
-- `now` — single-entry collection with `lastUpdated` and `description`
+- `now` — single-entry collection with `lastUpdated` and `description`. The entry lives at `src/content/now/index.mdx` (not `now.mdx`), and `src/pages/now.astro` reads it via `getEntry('now', 'index')`.
 
 Adding or renaming fields requires updating the schema here AND the pages that render the collection; mismatches fail the build.
+
+**Imports.** `tsconfig.json` maps `@/*` to `src/*`. Prefer `@/lib/content` over deep relative paths.
 
 **Drafts.** `src/lib/content.ts` exposes `filterDrafts()` — every list page that surfaces collection entries must pass results through it. It keys off `import.meta.env.PROD`, so drafts render in `npm run dev` but are stripped from the production build.
 
@@ -48,3 +50,5 @@ Vitest + `happy-dom`. Tests are file-assertion heavy: they read `.astro`/`.mdx` 
 ## Agent-OS product context
 
 `agent-os/` holds product mission, roadmap, and writing/style standards that inform *editorial* intent (problem-first, signal density, comfortable with uncertainty). Read `agent-os/product/mission.md` before making content or IA changes — e.g., this is intentionally *not* a blog, not SEO-optimized, and avoids "personal brand" framing.
+
+For content work, also read `docs/writing-style.md` and `docs/saurabh-positioning.md` — they define the dry, understated first-person voice used across Problem Notes and Case Studies. Code-side conventions live under `agent-os/standards/{frontend,testing,global,backend}/`.
