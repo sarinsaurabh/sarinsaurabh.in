@@ -7,48 +7,55 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About - Saurabh Sarin" description="I work on complex, ambiguous problems at the intersection of product, technology, and learning.">
+<BaseLayout title="About - Saurabh Sarin" description="Saurabh Sarin: fifteen years in product, mostly in education. Now building solo with AI tools.">
   <article class="about-page">
     <section class="intro">
       <h1>About</h1>
       <p class="subtitle">
-        I work on complex, ambiguous problems at the intersection of product, technology, and learning.
+        Fifteen years in product, now building solo.
       </p>
     </section>
 
     <section class="about-content">
       <p>
-        Over the years, I have spent most of my time in environments where the problem is not clearly defined, the constraints keep changing, and the right answer is rarely obvious upfront. My default mode in these situations is to slow down, understand the problem deeply, and resist jumping to solutions too early.
+        I'm trained as an engineer (BITS Pilani) with an MBA (SP Jain), but the last fifteen years have been in product, mostly in education. The Indian years were at CueMath, Byju's, and a few others. There were stops at Noon Learning in the Middle East, and at Babbel and Delivery Hero in Berlin. Across all these places, my job came down to the same thing: champion the user's problem, then experiment and iterate until the digital product actually solved it.
       </p>
 
-      <p>A few things that tend to show up consistently in my work:
-      <ul>
-        <li><strong>Problem-first thinking.</strong> I spend disproportionate time framing the problem before committing to a direction.
-      
-        <li><strong>Translation between worlds.</strong> I often operate between business, technology, and people, making ideas legible across these boundaries.
-    
-        <li><strong>Structure in ambiguity.</strong> I am comfortable working when things are messy and incomplete, and I enjoy bringing clarity without oversimplifying.
-      
-        <li><strong>Fast, durable learning.</strong> I pick up new domains quickly, but I care more about depth than surface familiarity.
-      </ul>
+      <p>
+        I tried co-founding my own thing once before. In 2013, during my MBA, I started AcadMentor: an adaptive math learning product for middle school students. It pivoted a few times and shut down. Wrong timing, not enough skills, not enough capital. The wanting-to-build-my-own-thing has been there since, and what I'm doing now is the second attempt with better tools and twelve more years behind it.
+      </p>
+
+      <p>
+        More recently, I started learning to build software with AI tools. The shift from working inside a product team to building alone is what most of my current writing here is about. The <a href="/now">Now</a> page covers what I'm specifically working on; this page is for the longer arc.
+      </p>
+    </section>
+
+    <section class="mentoring">
+      <h2>Mentoring and Teaching</h2>
+      <p>
+        I also mentor product managers and designers. The formal version is a course I created on product management and free 1-on-1 slots I run on <a href="https://adplist.org/mentors/saurabh-sarin">ADP List</a>. The informal version is a longer trail of people I've worked with and people who find their way to me through this writing.
       </p>
     </section>
 
     <section class="about-site">
+      <h2>What this site is</h2>
       <p>
-        This site is not a portfolio or a résumé. It is a public workspace.
+        This is not a portfolio or a résumé. It is a public workspace.
       </p>
 
       <p>
-        The <a href="/problem-notes">Problem Notes</a> are short explorations of questions I am actively thinking about. <a href="/case-studies">Case Studies</a> document how some of those questions played out in real situations, including the trade-offs and imperfect outcomes. The <a href="/now">Now</a> page captures what currently has my attention.
+        The <a href="/problem-notes">Problem Notes</a> are short explorations of questions I'm actively thinking about, each tagged with how settled the thinking is. The <a href="/case-studies">Case Studies</a> document how some of those questions played out in real situations, with the trade-offs and imperfect outcomes named. The <a href="/now">Now</a> page captures what currently has my attention.
       </p>
 
       <p>
-        I do not publish frequently, and I do not aim to be exhaustive. I write when I feel I have something worth articulating, even if the thinking is unfinished.
+        I don't publish frequently, and I don't aim to be exhaustive. I write when the thinking is articulate enough to share, even if it isn't finished.
       </p>
+    </section>
 
+    <section class="contact">
+      <h2>How to reach me</h2>
       <p>
-        If something here resonates and you want to think through a problem together, you can reach me by <a href="mailto:sarin.saurabh@gmail.com">email</a>.
+        My email is <a href="mailto:sarin.saurabh@gmail.com">sarin.saurabh@gmail.com</a>. Specific questions get the best replies, and I read everything that comes in.
       </p>
     </section>
   </article>
@@ -80,17 +87,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 0;
   }
 
-  /* About Content */
+  /* Bio Section */
   .about-content {
     margin-bottom: 2rem;
   }
 
-  .about-content strong {
-    font-weight: 600;
+  /* Mentoring Section */
+  .mentoring {
+    margin-bottom: 2rem;
   }
 
   /* About Site Section */
   .about-site {
+    margin-bottom: 2rem;
+  }
+
+  /* Contact Section */
+  .contact {
     margin-bottom: 0;
   }
 </style>
