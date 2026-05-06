@@ -1,0 +1,44 @@
+---
+title: "The Pivot That Kept Too Much"
+description: "We pivoted our FPL app under legal pressure. The pivot kept the codebase, the information architecture, and the existing users. It didn't keep the new user the pivot was supposed to serve."
+date: 2026-05-05
+context: "Built a Fantasy Premier League app for mini-league admins to automate cash prize pots and keep players engaged through the season. A legal block on cash handling forced a pivot to a free insights tool for any FPL player."
+outcome: "Healthy click-through on launch, near-zero conversion. Diagnosed as a semi-pivot: the new product was the chassis of the old one with new content bolted on, and the new user couldn't find or act on what we'd built. Using the off-season to do user discovery cleanly and re-pivot from a fresh problem statement."
+draft: false
+---
+
+We pivoted our Fantasy Premier League app under legal pressure. The pivot kept the codebase, the information architecture, and the users we already had. It didn't keep the new user the pivot was supposed to serve.
+
+The original app was for mini-league admins. People who run unofficial cash pots inside their leagues: a weekly prize, a monthly prize, an overall season winner. The pots keep players engaged through the bad weeks, when most FPL accounts otherwise fizzle out around gameweek ten. The admins ran the pots on spreadsheets and WhatsApp. We built them a tool to automate prize distribution, track who'd been paid, and surface the kind of league insights an admin would use to keep players engaged. A few leagues adopted it. We had real users solving a real problem.
+
+Then we read the law more carefully. Cash handling on a software platform was not legally permissible in our market. The pivot was forced.
+
+## The Pivot, and What We Kept
+
+Three of us were building this. Engineering classmates from twenty years ago, working on it on the side. The decision was to drop the cash features and rebuild around a free insights tool: anyone with an FPL ID could come in and see their mini-league through a sharper lens than the official platform provides. How many of your seven friends own Haaland. How many captained him this week. The kind of question the official app doesn't help you answer.
+
+The pivot kept a lot of the existing app. The codebase. The user accounts. Crucially, the information architecture: a homepage, a leagues listing page, an insights page. The insights page had been a supporting feature in V1, glanced at occasionally by admins writing weekly league updates. In V2 it was supposed to be the hero of the product. We left it as a single dense page.
+
+Each of those carries was defensible by itself. The codebase reuse saved us months. Keeping the user accounts meant the few admins already on the platform had something to migrate to. Preserving the navigation meant we didn't have to redesign the user flow from scratch. None of this was unreasonable. Together, it meant we did a semi-pivot when the pivot needed to be total. The new user was a different person, with a different goal, encountering a different product. We gave them the chassis of the old product with new content bolted on.
+
+## How We Found Out
+
+We launched, marketed it to a wider audience of FPL players, ran ads. The click-through numbers were healthy. People came to the landing page. Then they didn't sign up. They didn't go beyond the landing page. They didn't do anything.
+
+The moment of realization for me was when I shared the app with my brother-in-law, who plays FPL. His response: "It looks good but what do I do with it?" I went back to other users with that question in mind. The same pattern came back from several of them. The insights are interesting where you can find them. People couldn't find them. When they did find them, they didn't know what to do with what they found. The hero page was dense to the point of opacity. What had been a supporting feature in V1 was now load-bearing, and a single dense page couldn't carry that weight.
+
+The "what do I do with it?" question stayed with me. It is the question a product gets asked when the user has shown up but the next step isn't legible. It is the question we should have anticipated when we started designing for a different user without redesigning for that different user.
+
+## What I'd Do Differently
+
+The mistake wasn't pivoting under legal pressure. Pivots happen. The mistake was treating the pivot as a feature swap inside the existing product instead of a fresh problem statement that needed a fresh product around it. The new user was a casual FPL player wanting to know how they were doing relative to their friends. That user didn't want or need the homepage-leagues-listing-insights flow we had built for admins. They wanted something else, and we never sat down to ask what.
+
+Specifically, the insights page should not have been a single dense page. Five pages, three pages and a feed, a sequence of nudged moments after each gameweek. Whatever the right answer was, it was not a dense single page reachable through admin-flavored navigation. We knew this dimly while we were building. We didn't act on it because the existing product made it cheaper not to.
+
+The reason that calculus felt right is worth interrogating. Pre-AI, the cost of rebuilding from scratch was high enough that *preserve what you have* was almost always the rational call after a pivot. With AI tooling, the cost of starting from a clean problem and rebuilding has dropped sharply. The historical case for protecting infrastructure has weakened, and most of us haven't updated our instincts yet. We didn't.
+
+## Where We Are Now
+
+Near-zero daily actives, end of season. The off-season is going to be the actual pivot: a clean problem statement, a real round of user discovery, and probably a different shape for the product entirely. The codebase will get reused where it serves the new user, and discarded where it doesn't. That distinction is the thing we should have made the first time.
+
+The app is at [myfplminileague.com](https://myfplminileague.com).
