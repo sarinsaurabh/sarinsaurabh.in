@@ -15,16 +15,16 @@ describe('Typography Foundation', () => {
     globalCss = fs.readFileSync(cssPath, 'utf-8');
   });
 
-  it('should load Source Serif 4 font via Google Fonts link in BaseLayout', () => {
+  it('should self-host Source Serif 4 via @fontsource instead of Google Fonts', () => {
     const layoutPath = path.join(process.cwd(), 'src/layouts/BaseLayout.astro');
     const layoutContent = fs.readFileSync(layoutPath, 'utf-8');
 
-    // Check for Google Fonts preconnect
-    expect(layoutContent).toContain('fonts.googleapis.com');
-    expect(layoutContent).toContain('fonts.gstatic.com');
+    // No runtime dependency on Google Fonts
+    expect(layoutContent).not.toContain('fonts.googleapis.com');
+    expect(layoutContent).not.toContain('fonts.gstatic.com');
 
-    // Check for Source Serif 4 font loading
-    expect(layoutContent).toContain('Source+Serif+4');
+    // Font is imported from the self-hosted @fontsource package (via global.css)
+    expect(globalCss).toContain('@fontsource-variable/source-serif-4');
   });
 
   it('should configure body text with font-size 18px and line-height 1.65', () => {
@@ -34,8 +34,8 @@ describe('Typography Foundation', () => {
     // Check body line-height is 1.65
     expect(globalCss).toMatch(/body\s*\{[^}]*line-height:\s*1\.65/);
 
-    // Check body uses Source Serif 4 with Georgia fallback
-    expect(globalCss).toMatch(/body\s*\{[^}]*font-family:\s*["']Source Serif 4["'],\s*Georgia,\s*serif/);
+    // Check body uses the self-hosted Source Serif 4 family with Georgia fallback
+    expect(globalCss).toMatch(/body\s*\{[^}]*font-family:\s*["']Source Serif 4 Variable["'],\s*Georgia,\s*serif/);
   });
 
   it('should set content column max-width to 680px', () => {
