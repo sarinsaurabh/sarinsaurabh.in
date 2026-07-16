@@ -81,11 +81,11 @@ describe('Case Studies Typography and Styling', () => {
     const listPagePath = path.join(projectRoot, 'src/pages/case-studies/index.astro');
     const content = fs.readFileSync(listPagePath, 'utf-8');
 
-    // Check for correct color values from spec
-    expect(content).toContain('#111'); // primary text
-    expect(content).toContain('#333'); // secondary text
-    expect(content).toContain('#666'); // meta text
-    expect(content).toContain('#eee'); // borders
+    // Check for correct color tokens from the shared palette (global.css)
+    expect(content).toContain('var(--color-text)');           // primary text
+    expect(content).toContain('var(--color-text-secondary)'); // secondary text
+    expect(content).toContain('var(--color-text-muted)');     // meta text
+    expect(content).toContain('var(--color-border)');         // borders
 
     // Check for proper font sizes
     expect(content).toContain('1.25rem'); // title size

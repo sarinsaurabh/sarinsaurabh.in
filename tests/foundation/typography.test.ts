@@ -46,11 +46,11 @@ describe('Typography Foundation', () => {
     expect(globalCss).toMatch(/main\s*\{[^}]*margin:\s*0\s+auto/);
   });
 
-  it('should set text color to #111 on white background', () => {
-    // Check body color is #111
-    expect(globalCss).toMatch(/body\s*\{[^}]*color:\s*#111/);
+  it('should set text and background colors from the palette tokens', () => {
+    // Check body text color uses the primary text token
+    expect(globalCss).toMatch(/body\s*\{[^}]*color:\s*var\(--color-text\)/);
 
-    // Check body background is white
-    expect(globalCss).toMatch(/body\s*\{[^}]*background-color:\s*#fff/);
+    // Check body background uses the background token
+    expect(globalCss).toMatch(/body\s*\{[^}]*background-color:\s*var\(--color-bg\)/);
   });
 });

@@ -50,7 +50,7 @@ describe('Problem Notes Individual Page', () => {
 
     // Verify styling includes smaller font size and muted color
     expect(content).toMatch(/font-size:\s*0\.85rem|0\.85rem/);
-    expect(content).toMatch(/#666|color:\s*#666/);
+    expect(content).toMatch(/color:\s*var\(--color-text-muted\)/);
   });
 
   it('should have Back to Problem Notes link', () => {

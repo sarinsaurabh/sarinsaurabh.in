@@ -61,8 +61,8 @@ describe('Responsive Design and Accessibility', () => {
     // All links should have visible focus indicators (accessibility)
     expect(globalCss).toMatch(/a:focus\s*\{[^}]*outline/);
 
-    // Color contrast should be sufficient (#111 on white provides 17.4:1 ratio)
-    expect(globalCss).toMatch(/body\s*\{[^}]*color:\s*#111/);
-    expect(globalCss).toMatch(/body\s*\{[^}]*background-color:\s*#fff/);
+    // Color contrast should be sufficient (dark text on a warm-white background)
+    expect(globalCss).toMatch(/body\s*\{[^}]*color:\s*var\(--color-text\)/);
+    expect(globalCss).toMatch(/body\s*\{[^}]*background-color:\s*var\(--color-bg\)/);
   });
 });
