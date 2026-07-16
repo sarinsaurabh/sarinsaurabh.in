@@ -50,9 +50,9 @@ describe('Now Page', () => {
     // Check for lastUpdated data access
     expect(content).toContain('lastUpdated');
 
-    // Check for subdued meta styling (0.9rem font-size, #666 color)
-    expect(content).toMatch(/font-size:\s*0\.9rem|0\.9rem/);
-    expect(content).toMatch(/#666|color:\s*#666/);
+    // Check for subdued meta styling: dedicated subtitle class colored with a muted palette token
+    expect(content).toContain('class="subtitle"');
+    expect(content).toMatch(/color:\s*var\(--color-text-secondary\)/);
   });
 
   it('should format date as "Month Day, Year" using toLocaleDateString', () => {

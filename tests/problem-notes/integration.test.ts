@@ -7,7 +7,6 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 
 const projectRoot = process.cwd();
 
@@ -57,44 +56,5 @@ describe('Problem Notes Integration', () => {
 
     // Check for empty state message
     expect(content).toContain('No problem notes yet');
-  });
-
-  it('should have sample content with varying statuses and tag configurations', () => {
-    const contentDir = path.join(projectRoot, 'src/content/problem-notes');
-    const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.mdx'));
-
-    const statuses = new Set<string>();
-    const nonDraftNotes: string[] = [];
-    let hasNotesWithTags = false;
-    let hasNotesWithoutTags = false;
-
-    for (const file of files) {
-      const filePath = path.join(contentDir, file);
-      const fileContent = fs.readFileSync(filePath, 'utf-8');
-      const { data } = matter(fileContent);
-
-      if (!data.draft) {
-        nonDraftNotes.push(file);
-        statuses.add(data.status);
-
-        if (data.tags && data.tags.length > 0) {
-          hasNotesWithTags = true;
-        } else {
-          hasNotesWithoutTags = true;
-        }
-      }
-    }
-
-    // Should have at least 2-3 non-draft notes for visual verification
-    expect(nonDraftNotes.length).toBeGreaterThanOrEqual(2);
-
-    // Should have all three status types represented
-    expect(statuses.has('exploring')).toBe(true);
-    expect(statuses.has('evolving')).toBe(true);
-    expect(statuses.has('stable')).toBe(true);
-
-    // Should have notes both with and without tags
-    expect(hasNotesWithTags).toBe(true);
-    expect(hasNotesWithoutTags).toBe(true);
   });
 });

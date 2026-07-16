@@ -17,7 +17,7 @@ describe('Footer Invitation', () => {
 
   it('should contain invitation text in footer', () => {
     // Check that the footer contains the invitation copy
-    expect(baseLayoutContent).toContain('If something here resonates and you want to think through a problem together');
+    expect(baseLayoutContent).toContain('If this resonates and you want to think through a problem together');
   });
 
   it('should have mailto link with correct email address', () => {
@@ -26,8 +26,8 @@ describe('Footer Invitation', () => {
   });
 
   it('should have accessible link text (not generic "click here")', () => {
-    // Check that the link text is descriptive ("reach out") not generic
-    expect(baseLayoutContent).toContain('>reach out</a>');
+    // Check that the link text is descriptive (the email address itself) not generic
+    expect(baseLayoutContent).toContain('>sarin.saurabh@gmail.com</a>');
     // Ensure no generic link text is used
     expect(baseLayoutContent).not.toContain('>click here</a>');
     expect(baseLayoutContent).not.toContain('>here</a>');
