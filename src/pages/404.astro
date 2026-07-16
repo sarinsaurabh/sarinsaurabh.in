@@ -1,0 +1,59 @@
+---
+/**
+ * 404 Page
+ * Astro emits this as dist/404.html, which GitHub Pages serves for missing paths.
+ * Uses BaseLayout for consistent site structure.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found - Saurabh Sarin" description="This page does not exist.">
+  <article class="not-found-page">
+    <section class="intro">
+      <h1>Page not found</h1>
+      <p class="subtitle">
+        There is nothing at this address.
+      </p>
+    </section>
+
+    <section class="not-found-content">
+      <p>
+        The link may be old, or the page may have moved. You can start from the
+        <a href="/problem-notes/">Problem Notes</a> or go back to the
+        <a href="/">home page</a>.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  /* 404 Page Styles
+   * Follows global.css patterns with text-first, calm aesthetic
+   */
+
+  .not-found-page {
+    /* Page container inherits main styling from global.css */
+  }
+
+  /* Intro Section - matches other pages */
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .intro h1 {
+    /* Uses h1 styling from global.css: 1.75rem/600 */
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Body Section */
+  .not-found-content {
+    margin-bottom: 0;
+  }
+</style>
